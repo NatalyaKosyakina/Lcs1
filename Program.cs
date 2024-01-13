@@ -1,21 +1,28 @@
 ﻿namespace Lcs1
 {
-    /*Убедившись что у нас есть все для отправки и получения сообщения напишем прообраз нашего чата. 
-     * Это будет утилита которая умеет  работать как сервер или же как клиент в зависимости от параметров командной строки. 
-     * Сервер будет уметь отправлять сообщения тогда как клиент принимать.*/
     internal class Program
     {
        
         static void Main(string[] args)
         {
+            //Thread thread = new Thread(Chat.Server);
+            //thread.Start();
 
-            if (args.Length == 0) {
-                Chat.Server();
-            }
-            else
+            Chat.Server();
+
+            Console.WriteLine("Укажите ник со стороны клиента");
+            string nik = Console.ReadLine();
+            while (String.IsNullOrEmpty(nik))
             {
-                Chat.Client(args[0]);
+                Console.WriteLine("Укажите ник со стороны клиента");
+                nik = Console.ReadLine();
             }
+
+            Thread thread2 = new Thread(() =>
+            {
+                Chat.Client(nik);
+            });
+            thread2.Start();
         }
     }
 }

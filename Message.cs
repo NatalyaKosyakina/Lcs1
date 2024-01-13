@@ -32,7 +32,7 @@ namespace Lcs1
 
         public Message() { }
 
-        // Что скопировать и куда?
+
         public override string ToString()
         {
             return $"Получено сообщение от {Name} ({Stime.ToShortTimeString()}): \n {Text}";
