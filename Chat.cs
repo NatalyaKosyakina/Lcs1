@@ -64,7 +64,6 @@ namespace Lcs1
             IPEndPoint localEP = new IPEndPoint(IPAddress.Parse("127.0.0.1"), 12345);
             UdpClient ucl = new UdpClient();
 
-            //Thread tr = new Thread(() =>
             {
                 while (true)
                 {
@@ -84,7 +83,7 @@ namespace Lcs1
                     Message? somemessage = Message.FromJson(str1);
                     Console.WriteLine(somemessage);
                 }
-            //});
+
             }
         }
 

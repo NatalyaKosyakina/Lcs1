@@ -5,9 +5,6 @@
        
         static void Main(string[] args)
         {
-            //Thread thread = new Thread(Chat.Server);
-            //thread.Start();
-
             Chat.Server();
 
             Console.WriteLine("Укажите ник со стороны клиента");

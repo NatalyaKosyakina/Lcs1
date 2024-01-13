@@ -18,7 +18,6 @@ namespace Lcs1
         {
             return JsonSerializer.Serialize(this);
         }
-        // 
         public static Message? FromJson(string somemessage)
         {
             return JsonSerializer.Deserialize<Message>(somemessage);
